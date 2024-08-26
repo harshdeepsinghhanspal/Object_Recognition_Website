@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Detection</title>
+    <!-- Add OpenCV -->
+    <script async src="opencv.js" onload="opencvReady()"></script>
+    <!-- Link to the CSS File -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Add Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <!-- Add Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Belanosima&family=Damion&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Main Page -->
+    <div class="main-page">
+        <!-- Side Line -->
+        <div class="side-line"></div>
+        <!-- Side Bar -->
+        <div class="side-bar">
+            <input type="file" id="image-upload" accept="image/*" style="display: none;">
+            <label for="image-upload" class="circle">
+                <i class="material-icons" style="font-size: 36px; color: white;">cloud_upload</i>
+                <span class="tooltip">Upload Image</span>
+            </label>
+            <span class="circle" id="RGB-Image">
+                <i class="material-icons" style="font-size: 36px; color: white;">palette</i>
+                <span class="tooltip">Preview Image</span>
+            </span>
+            <span class="circle" id="Gray-Scale-Image">
+                <i class="material-icons" style="font-size: 36px; color: white;">contrast</i>
+                <span class="tooltip">Black-n-White of the oploaded image</span>
+            </span>
+            <span class="circle" id="Object-Detection-Image">
+                <i class="material-icons" style="font-size: 36px; color: white;">fullscreen</i>
+                <span class="tooltip">Click for Object Recognition on the uploaded image</span>
+            </span>
+            <span class="circle" id="Download-Image">
+                <i class="material-icons" style="font-size: 36px; color: white;">download</i>
+                <span class="tooltip">Click Here to Download</span>
+            </span>
+            <span class="circle" id="Live-Webcam">
+                <i class="material-icons" style="font-size: 36px; color: white;">videocam</i>
+                <span class="tooltip">Click to Initiate Webcam</span>
+            </span>
+            <button id="play-pause-webcam">Play/Pause</button>
+            <span class="play-pause-webcam-tooltip">Play/Pause button is operational when the Camera button is pressed at least once</span>
+        </div>
+        <!-- Right Panel -->
+        <div class="right-panel">
+            <!-- Header -->
+            <div class="header">
+                <div class="empty-container"></div>
+                <h1 style="font-family: Belanosima; font-size: 40px;">Object Detection YOLOV8</h1>
+                <div class="logo-container"><img src="pngegg.png" width="90" height="90" alt="Cool Rooster"></div>
+            </div>
+            <!-- Tablet Container -->
+            <div class="tablet-container">
+                <img id="tablet-image" src="tablet.png" width="600" height="400" alt="">
+                <canvas id="main-canvas" width="550" height="350"> 
+                    <img id="image-main" src="bus.jpg" width="550" height="350" alt="">
+                    <video id="live-webcam-feed" autoplay width="550" height="350"></video>
+                </canvas>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Link to the JS File -->
+    <script src="main.js"></script>
+    <!-- Load Tensorflow js Model -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <!-- Load YOLOv8 Model -->
+    <script src="yolov8n_web_model/model.json"></script>
+</body>
+</html>
