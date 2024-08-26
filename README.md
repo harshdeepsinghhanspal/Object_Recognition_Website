@@ -8,3 +8,6 @@ Steps to include OpenCV and Model:
 
 [+] In the Javascript code👨‍💻 file, make sure to load the model⚡ correctly and be careful with the location(Line-99)📌:
 ![Screenshot 2024-08-26 154024](https://github.com/user-attachments/assets/84fab72e-dc17-4aea-9cc7-ca1775a4271b)
+
+
+⚠️ALL CODE FILES AND MODELS ARE VERY IMPORTANT⚠️
